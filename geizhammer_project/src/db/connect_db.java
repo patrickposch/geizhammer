@@ -1,9 +1,5 @@
 package db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.LinkedList;
 
 import model.Produkt;
@@ -17,12 +13,7 @@ public class connect_db {
 		
 		LinkedList<Produkt> list = produkte.getProdukteByKategorie(1);
 
-	     // Connect to database
-	        /*String hostName = "your_server.database.windows.net";
-	        String dbName = "your_database";
-	        String user = "your_username";
-	        String password = "your_password";*/
-	
+	     // Connect to database	
 	/*	String url = String.format("jdbc:sqlserver://geizhammer.database.windows.net:1433;database=geizhammerDB;user=Edmin@geizhammer;password=SQL16db_2018_req;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
 	       
 	        
