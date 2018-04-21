@@ -1,28 +1,38 @@
 package model;
 
-public class Benutzer {
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.LinkedList;
 
-	public Benutzer(int binID, String vorname, String nachname, String email, int fKstand) {
+public class Benutzer {
+	
+	String url = String.format(
+			"jdbc:sqlserver://geizhammer.database.windows.net:1433;database=geizhammerDB;user=Edmin@geizhammer;password=SQL16db_2018_req;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+
+
+	public Benutzer(int benID, String vorname, String nachname, String email, int FKstand) {
 		super();
-		this.binID = binID;
+		this.benID = benID;
 		this.vorname = vorname;
 		this.nachname = nachname;
 		this.email = email;
-		FKstand = fKstand;
+		this.FKstand = FKstand;
 	}
 
-	private int binID;
+	private int benID;
 	private String vorname;
 	private String nachname;
 	private String email;
 	private int FKstand;
 
-	public int getBinID() {
-		return binID;
+	public int getBenID() {
+		return benID;
 	}
 
-	public void setBinID(int binID) {
-		this.binID = binID;
+	public void setBinID(int benID) {
+		this.benID = benID;
 	}
 
 	public String getVorname() {
@@ -53,8 +63,14 @@ public class Benutzer {
 		return FKstand;
 	}
 
-	public void setFKstand(int fKstand) {
-		FKstand = fKstand;
+	public void setFKstand(int FKstand) {
+		this.FKstand=FKstand;
 	}
+	
+	public String toString()
+	{
+		return benID+"  "+vorname+"  "+nachname+"  "+email+"  "+FKstand;
+	}
+	
 
 }

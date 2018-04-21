@@ -2,6 +2,7 @@ package db;
 
 import java.util.LinkedList;
 
+import model.Benutzer;
 import model.Produkt;
 import model.ProdukteList;
 
@@ -9,14 +10,22 @@ public class connect_db {
 
 	public static void main(String[] args) {
 
-		ProdukteList produkte = new ProdukteList();
+		//Benutzer b = new Benutzer(17, "Testmongo 1", "McTestFace", "test@testitest.test", 1);
+		Queries q = new Queries();
+		
+		Benutzer b = null;
+		b = q.getUserByEmail("test@testitest.test");	//++++WORKS
+		System.out.println(b.toString());
+		
+		
+		//ProdukteList produkte = new ProdukteList();
 
 		// produkte.getProdukteByKategorie(1); ++++WORKS
-		produkte.getProdukteByName("Schraub"); // ++++WORKS
+		//produkte.getProdukteByName("Schraub"); // ++++WORKS
 
-		produkte.printListTest();
+		//produkte.printListTest();
 
-		
+		//q.createUserinDB(b); ++++WORKS
 	}
 
 }
